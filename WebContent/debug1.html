@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>debug</title>
+<title>写経</title>
 </head>
 <body>
 	<script type="text/javascript">
@@ -14,15 +14,8 @@
 			['B1','B2','B3'],
 			['C1','C2','C3'],
 		];
-		//中身と順番確認
-		console.log("sampleArrayA:", sampleArrayA);
 
-		//reduce() の中身を見る
-		var sampleArrayB= sampleArrayA.reduce(function(previousValue, currentValue) {
-		console.log("previousValue:", previousValue);
-		console.log("currentValue :", currentValue);
-		return previousValue.concat(currentValue);
-		});
+		var sampleArrayB= sampleArrayA.reduce(toOneDimension);
 		for (var counterVar= 0; counterVar< sampleArrayB.length; counterVar++) {
 			document.write('sampleArrayB['+counterVar+']:');
 			document.write(sampleArrayB[counterVar]);
