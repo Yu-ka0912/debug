@@ -7,6 +7,10 @@
 <body>
 	<script type="text/javascript">
 		function toOneDimension(previousValue, currentValue) {
+			//処理が行われた配列を見る
+			console.log("previousValue:",previousValue);
+			console.log("currentValue:",currentValue);
+
 			return previousValue.concat(currentValue);
 		}
 		var sampleArrayA= [
@@ -17,12 +21,8 @@
 		//中身と順番確認
 		console.log("sampleArrayA:", sampleArrayA);
 
-		//reduce() の中身を見る
-		var sampleArrayB= sampleArrayA.reduce(function(previousValue, currentValue) {
-		console.log("previousValue:", previousValue);
-		console.log("currentValue :", currentValue);
-		return previousValue.concat(currentValue);
-		});
+
+		var sampleArrayB= sampleArrayA.reduce(toOneDimension);
 		for (var counterVar= 0; counterVar< sampleArrayB.length; counterVar++) {
 			document.write('sampleArrayB['+counterVar+']:');
 			document.write(sampleArrayB[counterVar]);
