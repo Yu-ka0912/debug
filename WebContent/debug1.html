@@ -6,7 +6,10 @@
 </head>
 <body>
 	<script type="text/javascript">
-		function toOneDimension(previousValue, currentValue) {
+		function toOneDimension(currentValue,previousValue) {
+			//処理内容を見る
+			console.log("currentValue:",currentValue);
+			console.log("previousValue:",previousValue);
 			return previousValue.concat(currentValue);
 		}
 		var sampleArrayA= [
@@ -14,8 +17,10 @@
 			['B1','B2','B3'],
 			['C1','C2','C3'],
 		];
+		console.log(sampleArrayA);
+		alert(sampleArrayA);
 
-		var sampleArrayB= sampleArrayA.reverse().reduce(toOneDimension);
+		var sampleArrayB= sampleArrayA.reduce(toOneDimension);
 		for (var counterVar= 0; counterVar< sampleArrayB.length; counterVar++) {
 			document.write('sampleArrayB['+counterVar+']:');
 			document.write(sampleArrayB[counterVar]);
