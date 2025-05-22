@@ -2,12 +2,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>debug</title>
+<title>デバック</title>
 </head>
 <body>
 	<script type="text/javascript">
+		alert("デバック用HTMLです");
 		function toOneDimension(previousValue, currentValue) {
-			//処理が行われた配列を見る
+			//処理内容を見る
 			console.log("previousValue:",previousValue);
 			console.log("currentValue:",currentValue);
 
@@ -20,13 +21,16 @@
 		];
 		//中身と順番確認
 		console.log("sampleArrayA:", sampleArrayA);
-
+		//A1表示されるか確認
+		console.log(sampleArrayA[0][0]);
 
 		var sampleArrayB= sampleArrayA.reduce(toOneDimension);
 		for (var counterVar= 0; counterVar< sampleArrayB.length; counterVar++) {
 			document.write('sampleArrayB['+counterVar+']:');
 			document.write(sampleArrayB[counterVar]);
 			document.write('<br/>');
+			//sampleArrayB表示確認
+			console.log("sampleArrayB[" + counterVar + "]:", sampleArrayB[counterVar]);
 		}
 	</script>
 </body>
